@@ -1,0 +1,192 @@
+/*** Look at "include(col-X)" instead of using col- class names ***/
+
+.row 
+	max-width 1500px
+	margin 0 auto
+	position relative
+
+	[class^=col-] 
+		float left
+		position relative
+		margin 0 (percentage(margin/max-width))
+	
+	.expand 
+		margin 0
+
+		&.double 
+			padding-right (percentage(margin/max-width))
+		
+		&.double + [class^=col-] 
+			margin-left 0
+		
+	.text-right 
+		text-align right
+
+	.text-centre 
+		text-align center
+
+	.inner-row 
+		margin-left -2.6%
+
+		[class^=col-] 
+			margin-right 0
+			margin-left 2.6%
+		
+	[class*=border-left] 
+		margin-left 0
+		padding-left (percentage(margin/max-width))
+
+	.col-1 
+		width (percentage(column/max-width))
+
+		&.expand 
+			width (percentage((column+2*margin)/max-width))
+		
+	.col-2 
+		width (percentage((2*column+2*margin)/max-width))
+
+		&.expand 
+			width (percentage((2*column+4*margin)/max-width))
+		
+	.col-3 
+		width (percentage((3*column+4*margin)/max-width))
+		
+		&.expand 
+			width (percentage((3*column+6*margin)/max-width))
+		
+	.col-4 
+		width (percentage((4*column+6*margin)/max-width))
+
+		&.expand 
+			width (percentage((4*column+8*margin)/max-width))
+		
+	.col-5 
+		width (percentage((5*column+8*margin)/max-width))
+
+		&.expand 
+			width (percentage((5*column+10*margin)/max-width))
+		
+	.col-6 
+		width (percentage((6*column+10*margin)/max-width))
+
+		&.expand 
+			width (percentage((6*column+10*margin)/max-width))
+		
+	.col-7 
+		width (percentage((7*column+12*margin)/max-width))
+
+		&.expand 
+			width (percentage((7*column+14*margin)/max-width))
+		
+	.col-8 
+		width (percentage((8*column+14*margin)/max-width))
+
+		&.expand 
+			width (percentage((8*column+16*margin)/max-width))
+		
+	.col-9 
+		width (percentage((9*column+16*margin)/max-width))
+
+		&.expand 
+			width (percentage((9*column+18*margin)/max-width))
+		
+	.col-10 
+		width (percentage((10*column+18*margin)/max-width))
+
+		&.expand 
+			width (percentage((10*column+20*margin)/max-width))
+		
+	.col-11 
+		width (percentage((11*column+20*margin)/max-width))
+
+		&.expand 
+			width (percentage((11*column+22*margin)/max-width))
+		
+	.col-12 
+		width (percentage((12*column+22*margin)/max-width))
+
+		&.expand 
+			width (percentage((12*column+24*margin)/max-width))
+			
+	.offset1 
+		margin-left (percentage((column+3*margin)/max-width))
+	
+	.offset2 
+		margin-left (percentage((2*column+5*margin)/max-width))
+	
+	.offset3 
+		margin-left (percentage((3*column+7*margin)/max-width))
+	
+	.offset4 
+		margin-left (percentage((4*column+9*margin)/max-width))
+	
+	.offset5 
+		margin-left (percentage((5*column+11*margin)/max-width))
+	
+	.offset6 
+		margin-left (percentage((6*column+13*margin)/max-width))
+	
+	.offset7 
+		margin-left (percentage((7*column+15*margin)/max-width))
+	
+	.offset8 
+		margin-left (percentage((8*column+17*margin)/max-width))
+	
+	.offset9 
+		margin-left (percentage((9*column+19*margin)/max-width))
+	
+	.offset10 
+		margin-left (percentage((10*column+21*margin)/max-width))
+
+	.offset11 
+		margin-left (percentage((11*column+23*margin)/max-width))
+
+	&:after 
+		cf()
+	
+section, header 
+	position relative
+
+	@media(max-width 960px)
+		padding-left 20px
+		padding-right 20px
+	
+
+	@media(max-width 568px)
+		padding-left 15px
+		padding-right 15px
+	
+.content 
+	padding-top 50px
+	padding-bottom 50px
+
+.equalise 
+	.row 
+		display flex
+		flex-align center
+		align-items center
+		justify-content center
+
+		.button 
+			position absolute
+			bottom 0
+		
+		[class^=col-] 
+			padding-bottom 45px
+section 
+	width 100%
+	margin auto
+
+	+breakpoint(tablet)
+		padding-left 20px
+		padding-right 20px
+	
+
++breakpoint(mobile) 
+	section 
+		.row 
+			[class^=col-] 
+				width (percentage((12*column+22*margin)/max-width))	
+
+			[class*=offset] 
+				margin-left (percentage(margin/max-width))

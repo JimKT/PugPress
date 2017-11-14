@@ -1,0 +1,38 @@
+/*
+!.gitignore
+
+!wp-content/
+!README.md
+wp-content/*
+
+wp-content/plugins/
+
+!wp-content/themes/
+wp-content/themes/*
+!wp-content/themes/pugpress/
+!wp-content/themes/pugpress/screenshot.png
+wp-content/themes/pugpress/node_modules
+wp-content/themes/pugpress/style.css
+wp-content/themes/pugpress/module
+wp-content/themes/pugpress/assets/
+wp-content/themes/pugpress/.eslintrc
+!wp-content/themes/pugpress/*.php
+
+wp-content/themes/pugpress/package-lock.json
+!wp-content/themes/pugpress/modules/
+wp-content/themes/pugpress/*.php
+!wp-content/themes/pugpress/src/templates/functions.php
+
+
+# Windows 
+Thumbs.db
+ehthumbs.db
+
+# Folder Config File
+Desktop.ini
+
+# Recycle Bin used on file shares
+$RECYCLE.BIN/
+
+# Mac 
+.DS_Store
