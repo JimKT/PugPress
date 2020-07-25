@@ -1,0 +1,15 @@
+.top-overlap {
+    position: relative;
+    padding-bottom: 20px;
+
+    &:before {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 65%;
+        background: #F2F2F2;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+    }
+} 

@@ -1,0 +1,327 @@
+@function calculateRem($size) {
+	$remSize: $size / 16px;
+	@return #{$remSize}rem;
+}
+
+
+@mixin font($size,$line) {
+	font-size: $size;
+	font-size: calculateRem($size);
+	line-height: $line;
+	line-height: calculateRem($line);
+}
+
+@mixin media-query($size) {
+	@if $size == sm {
+	  @media (min-width: 576px) { @content; }
+	} @else if $size == md {
+	  @media (min-width: 768px) { @content; }
+	} @else if $size == lg {
+	  @media (min-width: 992px) { @content; }
+	} @else if $size == xl {
+	  @media (min-width: 1200px) { @content; }
+	}
+  }
+/*================ 2. Variables ================*/
+
+.container {
+	max-width: 1400px;
+}
+
+.container-sm {
+	max-width: 1000px;
+}
+
+#MainContent {
+	overflow-x: hidden;
+}
+
+
+// Primary / Secondary
+$color-primary: #1e2122;
+$color-secondary: #f3f6f9;
+$color-tertiary: #2e4050;
+$color-quaternary: #2a70f6;
+
+// Blacks and Whites
+$color-black: #01070E;
+$color-darkest-grey: #100A0A;
+$color-dark-grey: #212020;
+$color-grey: #646464;
+$color-light-grey: #CCCCCC;
+$color-white: #FFFFFF;
+$color-transparent-white: rgba(255,255,255,0.8);
+$color-dark-blue: #5B6E80;
+$color-light-blue: #f3f6f9bf;
+$color-red: #f43e37;
+
+.page-breadcrumbs {
+	* {
+		font-weight: 500;
+	}
+}
+
+.rounded {
+	border-radius: 0.50rem!important;
+}
+.color-primary {
+	color: $color-primary;
+}
+
+.color-secondary {
+	color: $color-secondary;
+}
+
+.color-tertiary {
+	color: $color-tertiary;
+}
+
+.color-quaternary {
+	color: $color-quaternary;
+}
+
+.color-black {
+	color: $color-black;
+}
+
+.color-darkest-grey {
+	color: $color-darkest-grey;
+}
+
+.color-dark-grey {
+	color: $color-dark-grey;
+}
+
+.color-grey {
+	color: $color-grey;
+}
+
+.color-light-grey {
+	color: $color-light-grey;
+}
+
+.color-white {
+	color: $color-white;
+}
+
+.color-transparent-white {
+	color: $color-transparent-white;
+}
+
+.color-light-blue {
+	color: $color-light-blue;
+}
+
+.color-light-grey {
+	color: $color-light-grey;
+}
+
+.background-primary {
+	background-color: $color-primary;
+}
+
+.background-secondary {
+	background-color: $color-secondary;
+}
+
+.background-tertiary {
+	background-color: $color-tertiary;
+}
+
+.background-quaternary {
+	background-color: $color-quaternary;
+}
+
+.background-black {
+	background-color: $color-black;
+}
+
+.background-darkest-grey {
+	background-color: $color-darkest-grey;
+}
+
+.background-dark-grey {
+	background-color: $color-dark-grey;
+}
+
+.background-grey {
+	background-color: $color-grey;
+}
+
+.background-light-grey {
+	background-color: $color-light-grey;
+}
+
+.background-white {
+	background-color: $color-white;
+}
+
+.background-light-blue {
+	background-color: $color-light-blue;
+}
+
+
+/*================ SETTINGS ================*/
+/*================ Color Variables ================*/
+
+// Text colors
+$color-body-text: $color-black;
+
+// Backgrounds
+$color-body: $color-white;
+
+// Border colors
+$color-border: #f6f6f6;
+
+// Helper colors for form error states
+$color-disabled: #ADADAD;
+$color-disabled-border: #ADADAD;
+$color-error: #fff;
+$color-error-bg: #994141;
+$color-success: #fff;
+$color-success-bg: #FF3D4F;
+
+/*================ Typography Variables ================*/
+$font-weight-normal: 400;
+$font-weight-bold: 700;
+
+$font-stack-header: 'Merriweather', serif;
+$font-stack-body:  'Montserrat', 'Helvetica', Arial, sans-serif;
+
+html,body {
+  height: 100%;
+  width: 100%;
+  font-family: $font-stack-body;
+  background: $color-body;
+}
+
+.font-heading {
+	font-family: $font-stack-header!important;
+}
+
+.font-body {
+	font-family: $font-stack-body!important;
+}
+
+[class^='col-'] {
+	padding-right: 16px;
+	padding-left: 16px;
+}
+
+// Helper Format
+$ways: b, l, r, t;
+$formats: p, m;
+$sizes: sm, md, lg, xl;
+$paddings: 8, 16, 24, 32, 48, 64, 124;
+
+@each $format in $formats {
+	@each $padding in $paddings {
+		.#{$format}-#{$padding} {
+			@if $format==p {
+				padding: #{$padding}px !important;
+			}
+
+			@else if $format==m {
+				margin: #{$padding}px !important;
+			}
+		}
+	}
+}
+
+@each $format in $formats {
+	@each $way in $ways {
+		@each $padding in $paddings {
+			.#{$format}#{$way}-#{$padding} {
+				@if $format==p {
+					@if $way==b {
+						padding-bottom: #{$padding}px !important;
+					}
+
+					@else if $way==l {
+						padding-left: #{$padding}px !important;
+					}
+
+					@else if $way==r {
+						padding-right: #{$padding}px !important;
+					}
+
+					@else if $way==t {
+						padding-top: #{$padding}px !important;
+					}
+				}
+
+				@else {
+					@if $way==b {
+						margin-bottom: #{$padding}px !important;
+					}
+
+					@else if $way==l {
+						margin-left: #{$padding}px !important;
+					}
+
+					@else if $way==r {
+						margin-right: #{$padding}px !important;
+					}
+
+					@else if $way==t {
+						margin-top: #{$padding}px !important;
+					}
+				}
+			}
+		}
+	}
+}
+
+@each $size in $sizes {
+	@include media-query(#{$size}) {
+		@each $format in $formats {
+			@each $way in $ways {
+				@each $padding in $paddings {
+					.#{$format}#{$way}-#{$size}-#{$padding} {
+						@if $format==p {
+							@if $way==b {
+								padding-bottom: #{$padding}px !important;
+							}
+
+							@else if $way==l {
+								padding-left: #{$padding}px !important;
+							}
+
+							@else if $way==r {
+								padding-right: #{$padding}px !important;
+							}
+
+							@else if $way==t {
+								padding-top: #{$padding}px !important;
+							}
+						} 
+						
+						@else {
+							@if $way==b {
+								margin-bottom: #{$padding}px !important;
+							}
+
+							@else if $way==l {
+								margin-left: #{$padding}px !important;
+							}
+
+							@else if $way==r {
+								margin-right: #{$padding}px !important;
+							}
+
+							@else if $way==t {
+								margin-top: #{$padding}px !important;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@mixin box-shadowed() {
+    border-radius: 10px;
+    box-shadow: 0px 3px 6px 1px #cccccc61;
+    padding: 20px 15px;
+} 

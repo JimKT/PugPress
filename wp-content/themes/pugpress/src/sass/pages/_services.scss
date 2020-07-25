@@ -1,0 +1,20 @@
+.services__container {
+    figure {
+        display: inline-block;
+        vertical-align: top;
+
+        @include media-query(md) {
+            padding-top: 7px;
+        }
+    }
+
+    .services__text {
+        display: inline-block;
+        vertical-align: top;
+        width: 100%;
+        @include media-query(md) {
+            padding-left: 15px;
+            width: 85%;
+        }
+    }
+}

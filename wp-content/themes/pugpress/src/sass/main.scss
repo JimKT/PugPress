@@ -1,0 +1,22 @@
+// This is an empty scss file for your custom styles - Please add your super duper awesome mega design styles here
+
+@import "variables";
+
+@import 'grid/config';
+@import 'grid/base';
+@import 'grid/column-generator';
+@import 'grid/grid';
+@import 'grid/util';
+@import 'grid/spacing';
+
+@import "components/typography";
+@import "components/buttons";
+
+@import "layout/header";
+@import "layout/footer";
+
+@import "pages/home";
+@import "pages/collage";
+@import "pages/services";
+@import "pages/contact";
+@import "pages/blog";  

@@ -1,0 +1,76 @@
+#wrapper-footer {
+    hr {
+        opacity: 0.1;
+    }
+}
+
+.footer__link {
+    color: #1e2122;
+    transition: .3s ease-in-out;
+
+    &:hover {
+        color: darken(#1e2122, 30%);
+        text-decoration: none;
+    }
+}
+
+.footer__icon {
+    width: auto;
+    height: 20px;
+}
+
+.footer__text {
+    @include font(14px,24px);
+}
+
+.box-shadowed {
+    @include box-shadowed();
+}
+
+.article__cat {
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: #878c96;
+}
+
+
+.author__image, .author__details {
+    display: inline-block;
+    vertical-align: top;
+ 
+    p {
+        @include font(12px,12px);
+    }
+
+    img {
+        border-radius: 100%;
+    }
+}
+
+#footer-menu {
+    list-style: none;
+    font-size: 0px;
+    margin-bottom: 0px;
+
+    li {
+        display: inline-block;
+        width: 33%;
+        margin: 10px 0px;
+        font-size: 13px;
+        font-weight: 600;
+
+        a {
+            color: #1e2122;
+        }
+    }
+}
+
+.site-footer {
+    p {
+        font-size: 9px;
+        line-height: 19px;
+        color: #1e2122;
+        margin-bottom: 0px;
+    }
+}

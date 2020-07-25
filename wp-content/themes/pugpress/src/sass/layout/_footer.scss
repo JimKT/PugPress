@@ -1,0 +1,24 @@
+#wrapper-footer {
+    background: $color-black;
+
+    a, p {
+        color: #999999;
+    }
+}
+
+#wrapper-lower-footer {
+    background: #1A1A1A;
+
+    a, p {
+        color: #999999;
+        font-size: 12px;
+        line-height: 18px;
+        text-decoration: none;
+    }
+}
+
+.footer__icon {
+    width: 24px;
+    height: auto;
+    margin: 0px 15px 25px 15px;
+}

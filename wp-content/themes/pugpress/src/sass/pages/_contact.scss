@@ -1,0 +1,75 @@
+.contact-form {
+    background: white;
+    box-shadow: 0px 15px 11px 5px #00000014;
+    padding: 40px;
+
+    @include media-query(md) {
+        padding: 80px;
+    }
+
+    .wpcf7 {
+        max-width: 100%; 
+    }
+
+    br {
+        display: none;
+    }
+
+    label {
+        position: absolute;
+        left: 30px;
+        top: 15px;
+        font-size: 12px;
+        line-height: 28px;
+        color: #737373;
+        opacity: 0;
+        transition: 0.3s ease-in-out;
+        vertical-align: top;
+
+        &.active {
+            transition: 0.3s ease-in-out;
+            opacity: 1;
+            padding-top: 0px;
+            transform: translateY(-10px);
+            z-index: 999999;
+        }
+    }
+
+    input {
+        &.active {
+            padding-top: 30px!important;
+            padding-bottom: 10px!important;
+        }
+    }
+}
+
+input[type="submit"] {
+    background-color: #628dac!important;
+    color: #fff!important;
+    border: 0!important;
+    width: auto!important;
+    font-weight: 700!important;
+    padding: 10px 20px!important;
+    float: right;
+    height: auto!important;
+}
+
+input[type="text"], input[type="email"], input[type="telephone"], textarea {
+    background: #F2F2F2!important;
+    color: $color_black!important;
+    padding: 20px 15px!important;
+    border-radius: 4px!important;
+    border: 0px!important;
+    height: auto!important;
+    resize: none;
+    transition: 0.3s ease-in-out;
+    outline: none;
+
+
+    &:active, &:focus {
+        background-color: #E6E6E6!important;
+        box-shadow: none!important;
+        outline: none;
+        transition: 0.3s ease-in-out;
+    }
+}
